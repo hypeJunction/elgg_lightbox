@@ -1,0 +1,20 @@
+{
+	"name": "hypejunction/elgg_lightbox",
+	"type": "elgg-plugin",
+	"description": "Enhanced lightbox for Elgg",
+	"homepage": "http://hypejunction.com",
+	"keywords": [
+		"elgg", "plugin", "ui", "lightbox"
+	],
+	"license": "GPL-2.0",
+	"authors": [
+		{
+			"name": "Ismayil Khayredinov",
+			"email": "info@hypejunction.com"
+		}
+	],
+	"require-dev": {
+		"composer/installers": "1.*"
+	}
+}
+
