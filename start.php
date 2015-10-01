@@ -19,8 +19,5 @@ function elgg_lightbox_init() {
 		'src' => '/vendors/jquery/colorbox/jquery.colorbox-min.js',
 		'deps' => array('jquery'),
 	));
-
-	//elgg_load_js('lightbox');
-	elgg_load_css('lightbox');
-	elgg_require_js('lightbox/test');
+	
 }
