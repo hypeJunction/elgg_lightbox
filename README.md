@@ -17,7 +17,10 @@ As an AMD module:
 
 ```js
 
-define(['elgg', 'jquery', 'elgg/lightbox', 'elgg/spinner'], function(elgg, $, lightbox, spinner) {
+define(function(require) {
+	var lightbox = require('elgg/lightbox');
+	var spinner = require('elgg/spinner');
+	
 	lightbox.open({
 		html: '<p>You are welcome</p>',
 		onClosed: function() {
@@ -39,7 +42,7 @@ Additional parameters can be passed with `data-colorbox-opts` as a json_encoded 
 Note that for the `rel` options to take effect, you will need to call a colorbox on a selector, e.g.
 
 ```js
-require('elgg/lightbox', function() {
+require(['elgg/lightbox'], function() {
 	$('.elgg-lightbox-photo').colorbox({photo: true});
 });
 
