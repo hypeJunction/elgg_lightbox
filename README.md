@@ -9,9 +9,11 @@ Lightbox component for Elgg
 * Converts lightbox to AMD module
 * Custom imageless theme
 
-![Tooltip](https://raw.github.com/hypeJunction/elgg_tooltip/master/screenshots/tooltip.png "Tooltip")
+![Lightbox](https://raw.github.com/hypeJunction/elgg_lightbox/master/screenshots/lightbox.png "Lightbox")
 
 ## Usage
+
+As an AMD module:
 
 ```js
 
@@ -27,6 +29,18 @@ define(['elgg', 'jquery', 'elgg/lightbox', 'elgg/spinner'], function(elgg, $, li
 			});
 		}
 	});
+});
+
+```
+
+You can also add `.elgg-lightbox` or `.elgg-lightbox-photo` class to your HTML elements (with a `href` or `src`) attribute.
+Additional parameters can be passed with `data-colorbox-opts` as a json_encoded object.
+
+Note that for the `rel` options to take effect, you will need to call a colorbox on a selector, e.g.
+
+```js
+require('elgg/lightbox', function() {
+	$('.elgg-lightbox-photo').colorbox({photo: true});
 });
 
 ```
