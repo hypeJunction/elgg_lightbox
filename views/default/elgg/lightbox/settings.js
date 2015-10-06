@@ -1,10 +1,9 @@
 define(['elgg', 'jquery'], function (elgg, $) {
-	elgg.provide('elgg.ui.lightbox');
-	var settings = {
+	return {
 		current: elgg.echo('js:lightbox:current', ['{current}', '{total}']),
-		previous: elgg.echo('previous'),
-		next: elgg.echo('next'),
-		close: elgg.echo('close'),
+		previous: '<span class="fa fa-caret-left"></span>',
+		next: '<span class="fa fa-caret-right"></span>',
+		close: '<span class="fa fa-times"></span>',
 		xhrError: elgg.echo('error:default'),
 		imgError: elgg.echo('error:default'),
 		opacity: 0.5,
@@ -12,8 +11,4 @@ define(['elgg', 'jquery'], function (elgg, $) {
 		// don't move colorbox on small viewports https://github.com/Elgg/Elgg/issues/5312
 		reposition: $(window).height() > 600
 	};
-	if (typeof elgg.ui.lightbox.getSettings === 'function') {
-		settings = elgg.ui.lightbox.getSettings();
-	}
-	return elgg.trigger_hook('settings', 'lightbox', {}, settings);
 });

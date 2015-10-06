@@ -1,19 +1,17 @@
 Lightbox for Elgg
 ================
-![Elgg 1.11](https://img.shields.io/badge/Elgg-1.11.x-orange.svg?style=flat-square)
-![Elgg 1.12](https://img.shields.io/badge/Elgg-1.12.x-orange.svg?style=flat-square)
+![Elgg 2.0](https://img.shields.io/badge/Elgg-2.0.x-orange.svg?style=flat-square)
 
 Lightbox component for Elgg
 
 ## Features
 
 * Converts lightbox to AMD module
+* Custom imageless theme
 
-
+![Tooltip](https://raw.github.com/hypeJunction/elgg_tooltip/master/screenshots/tooltip.png "Tooltip")
 
 ## Usage
-
-With the plugin enabled, you no longer need to use `elgg_load_js('lightbox')`.
 
 ```js
 
@@ -32,3 +30,7 @@ define(['elgg', 'jquery', 'elgg/lightbox', 'elgg/spinner'], function(elgg, $, li
 });
 
 ```
+
+## Notes
+
+* This drop `elgg.ui.lightbox` namespace. Use AMD module instead.

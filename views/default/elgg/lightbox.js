@@ -3,7 +3,7 @@ define(function (require) {
 	var elgg = require('elgg');
 	var $ = require('jquery');
 	require('jquery.colorbox');
-	var settings = require('lightbox/settings');
+	var settings = require('elgg/lightbox/settings');
 	
 	var lightbox = {
 		settings: settings,
@@ -17,7 +17,7 @@ define(function (require) {
 			if (!$.isPlainObject(opts)) {
 				opts = {};
 			}
-
+		
 			$(document).on('click', selector, function (e) {
 				e.preventDefault();
 				var $this = $(this),

@@ -1,0 +1,190 @@
+@import "compass/css3";
+@import "variables";
+
+/*
+Colorbox Core Style:
+The following CSS is consistent between example themes and should not be altered.
+*/
+#colorbox,
+#cboxOverlay,
+#cboxWrapper {
+	position: absolute;
+	top: 0;
+	left: 0;
+	z-index: 1100;
+	overflow: hidden;
+}
+
+#cboxWrapper {
+	max-width: none;
+}
+
+#cboxOverlay {
+	position: fixed;
+	width: 100%;
+	height: 100%;
+	background: $overlay-color;
+}
+
+#cboxMiddleLeft,
+#cboxBottomLeft {
+	clear: left;
+}
+
+#cboxContent {
+	position: relative;
+	background: transparent;
+	margin: 25px + $border-width;
+	border: $border-width $border-color solid;
+	background: #fff;
+	@include border-radius($border-radius);
+}
+
+#cboxLoadedContent {
+	overflow: auto;
+	-webkit-overflow-scrolling: touch;
+}
+
+#cboxTitle {
+	position: absolute;
+    bottom: -35px;
+    max-width: 80%;
+	font-weight: bold;
+}
+
+#cboxLoadingOverlay,
+#cboxLoadingGraphic {
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+}
+
+#cboxPrevious,
+#cboxNext,
+#cboxClose,
+#cboxSlideshow {
+	cursor: pointer;
+}
+
+.cboxPhoto {
+	float: left;
+	border: 0;
+	display: block;
+	max-width: none;
+	-ms-interpolation-mode: bicubic;
+	margin: auto;
+}
+
+.cboxIframe {
+	width: 100%;
+	height: 100%;
+	display: block;
+	border: 0;
+	background: #fff;
+}
+
+#colorbox,
+#cboxContent,
+#cboxLoadedContent {
+	@include box-sizing(content-box);
+}
+
+#cboxTopLeft,
+#cboxTopCenter,
+#cboxTopRight,
+#cboxBottomLeft,
+#cboxBottomCenter,
+#cboxBottomRight,
+#cboxMiddleLeft,
+#cboxMiddleRight {
+	display: none;
+}
+
+#cboxError {
+	border: 1px solid $border-color;
+	padding: 50px;
+}
+
+#cboxCurrent {
+	position: absolute;
+    right: 0;
+    bottom: -35px;
+}
+
+#cboxLoadingOverlay {
+	background: transparent url(ajax_loader_bw.gif) no-repeat center center;
+}
+
+#cboxPrevious,
+#cboxNext,
+#cboxSlideshow,
+#cboxClose {
+	border: 0;
+	overflow: visible;
+	width: auto;
+	background: none;
+	margin: 0;
+	padding: 0;
+}
+
+#cboxSlideshow {
+	position: absolute;
+	bottom: 0;
+	right: 42px;
+	color: #444;
+}
+
+#cboxClose, #cboxPrevious, #cboxNext {
+	position: absolute;
+	width: $control-size;
+	height: $control-size;
+	font-size: $control-size - 8px;
+	line-height: $control-size - 8px;
+	top: 50%;
+	@include border-radius(1000px);
+    background: $control-bg;
+    color: $control-color;
+    text-align: center;
+    box-shadow: 0 0 0 2px $control-border;
+}
+
+#cboxPrevious {
+	left: 0;
+	margin-left: -15px;
+	top: 50%;
+	margin-top: -$control-size/2 - 2px;
+}
+
+#cboxNext {
+	right: 0;
+	margin-right: -15px;
+	top: 50%;
+	margin-top: -$control-size/2 - 2px;
+}
+
+#cboxClose {
+	top: 0;
+	right: 0;
+	margin: -15px;
+}
+
+.cboxIE #cboxTopLeft,
+.cboxIE #cboxTopCenter,
+.cboxIE #cboxTopRight,
+.cboxIE #cboxBottomLeft,
+.cboxIE #cboxBottomCenter,
+.cboxIE #cboxBottomRight,
+.cboxIE #cboxMiddleLeft,
+.cboxIE #cboxMiddleRight {
+	filter: progid:DXImageTransform.Microsoft.gradient(startColorstr=#00FFFFFF,endColorstr=#00FFFFFF);
+}
+
+#colorbox,
+#cboxPrevious:active,
+#cboxNext:active,
+#cboxSlideshow:active,
+#cboxClose:active {
+	outline: 0;
+}
