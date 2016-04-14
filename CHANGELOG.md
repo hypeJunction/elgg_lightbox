@@ -1,3 +1,13 @@
+<a name="2.1.1"></a>
+## [2.1.1](https://github.com/hypeJunction/elgg_lightbox/compare/2.1.0...v2.1.1) (2016-04-14)
+
+
+### Bug Fixes
+
+* **css:** fix css registration and extension ([1483744](https://github.com/hypeJunction/elgg_lightbox/commit/1483744))
+
+
+
 <a name="2.1.0"></a>
 # [2.1.0](https://github.com/hypeJunction/elgg_lightbox/compare/2.0.1...v2.1.0) (2016-04-14)
 
