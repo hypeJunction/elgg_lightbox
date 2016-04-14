@@ -43,6 +43,10 @@ The following CSS is consistent between example themes and should not be altered
 #cboxLoadedContent {
 	overflow: auto;
 	-webkit-overflow-scrolling: touch;
+	& > * {
+		padding: 15px;
+		@include box-sizing(border-box);
+	}
 }
 
 #cboxTitle {

@@ -13,6 +13,7 @@ The following CSS is consistent between example themes and should not be altered
 #cboxContent { position: relative; background: transparent; margin: 35px; border: 10px rgba(204, 204, 204, 0.5) solid; background: #fff; -webkit-border-radius: 5px; -moz-border-radius: 5px; -ms-border-radius: 5px; -o-border-radius: 5px; border-radius: 5px; }
 
 #cboxLoadedContent { overflow: auto; -webkit-overflow-scrolling: touch; }
+#cboxLoadedContent > * { padding: 15px; -webkit-box-sizing: border-box; -moz-box-sizing: border-box; box-sizing: border-box; }
 
 #cboxTitle { position: absolute; bottom: -35px; max-width: 80%; font-weight: bold; }
 

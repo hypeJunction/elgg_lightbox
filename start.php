@@ -16,13 +16,14 @@ function elgg_lightbox_init() {
 
 	if (!elgg_is_active_plugin('mrclay_combiner')) {
 		elgg_unregister_js('lightbox');
-		elgg_extend_view('elgg.js', 'lightbox.js');
-
 		elgg_unregister_css('lightbox');
 		elgg_extend_view('elgg.css', 'elgg/lightbox.css');
 		elgg_extend_view('admin.css', 'elgg/lightbox.css');
 	}
 
-	elgg_extend_view('theme_sandbox/javascript', 'theme_sandbox/javascript/lightbox-photo');
-	elgg_extend_view('theme_sandbox/javascript', 'theme_sandbox/javascript/lightbox-iframe');
+	if (version_compare('2.2', elgg_get_version(true), '<')) {
+		elgg_extend_view('elgg.js', 'elgg/lightbox.js');
+	}
+
+	elgg_require_js('elgg/lightbox');
 }
