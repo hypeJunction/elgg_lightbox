@@ -1,3 +1,13 @@
+<a name="2.1.2"></a>
+## [2.1.2](https://github.com/hypeJunction/elgg_lightbox/compare/2.1.1...v2.1.2) (2016-04-26)
+
+
+### Bug Fixes
+
+* **assets:** fix css and js bootstraping ([6483674](https://github.com/hypeJunction/elgg_lightbox/commit/6483674))
+
+
+
 <a name="2.1.1"></a>
 ## [2.1.1](https://github.com/hypeJunction/elgg_lightbox/compare/2.1.0...v2.1.1) (2016-04-14)
 
