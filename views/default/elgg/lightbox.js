@@ -104,13 +104,18 @@ define('elgg/lightbox', function (require) {
 		open: function (opts) {
 			$.colorbox(lightbox.getOptions(opts));
 		},
+		
 		/**
 		 * Close the colorbox
 		 * @return void
 		 */
-		close: function () {
-			$.colorbox.close();
-		}
+		close: $.colorbox.close,
+
+		/**
+		 * Resizes the colorbox
+		 * @return void
+		 */
+		resize: $.colorbox.resize
 	};
 
 	lightbox.bind(".elgg-lightbox");
