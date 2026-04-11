@@ -7,8 +7,8 @@
 	verbose="true"
 >
 	<testsuites>
-		<testsuite name="unit">
-			<directory>phpunit/unit</directory>
+		<testsuite name="integration">
+			<directory>phpunit/integration</directory>
 		</testsuite>
 	</testsuites>
 </phpunit>

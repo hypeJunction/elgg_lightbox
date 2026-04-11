@@ -2,9 +2,12 @@
 
 namespace hypeJunction\Lightbox;
 
-use Elgg\UnitTestCase;
+use Elgg\IntegrationTestCase;
 
-class BootstrapTest extends UnitTestCase {
+class BootstrapTest extends IntegrationTestCase {
+
+	public function up() {}
+	public function down() {}
 
 	public function testPluginLoads(): void {
 		$plugin = elgg_get_plugin_from_id('elgg_lightbox');
