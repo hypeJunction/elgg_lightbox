@@ -13,8 +13,13 @@
 			"email": "info@hypejunction.com"
 		}
 	],
-	"require-dev": {
-		"composer/installers": "1.*"
+	"require": {
+		"composer/installers": "~1.0"
+	},
+	"autoload": {
+		"psr-4": {
+			"hypeJunction\\Lightbox\\": "classes/hypeJunction/Lightbox"
+		}
 	}
 }
 
