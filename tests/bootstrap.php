@@ -1,10 +1,27 @@
 <?php
+/**
+ * PHPUnit bootstrap for Elgg plugin tests.
+ * Plugin must be installed at {elgg_root}/mod/{plugin_id}/
+ */
 
-// Load the Elgg test bootstrapper
-$engine = dirname(__DIR__, 4) . '/engine';
+// tests/ -> mod/plugin/ -> mod/ -> elgg_root/
+$elggRoot = dirname(dirname(dirname(__DIR__)));
 
-if (!is_dir($engine)) {
-	$engine = dirname(__DIR__, 4) . '/vendor/elgg/elgg/engine';
+require_once $elggRoot . '/vendor/autoload.php';
+
+// Load Elgg test classes (UnitTestCase, IntegrationTestCase, etc.)
+$testClassesDir = $elggRoot . '/vendor/elgg/elgg/engine/tests/classes';
+spl_autoload_register(function ($class) use ($testClassesDir) {
+    $file = $testClassesDir . '/' . str_replace('\\', '/', $class) . '.php';
+    if (file_exists($file)) require_once $file;
+});
+
+// Load plugin autoloader if present
+$pluginRoot = dirname(__DIR__);
+if (file_exists($pluginRoot . '/vendor/autoload.php')) {
+    require_once $pluginRoot . '/vendor/autoload.php';
+} elseif (file_exists($pluginRoot . '/autoloader.php')) {
+    require_once $pluginRoot . '/autoloader.php';
 }
 
-require_once "{$engine}/tests/phpunit/bootstrap.php";
+\Elgg\Application::loadCore();
