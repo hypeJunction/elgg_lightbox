@@ -11,7 +11,7 @@ class Bootstrap extends PluginBootstrap {
 	public function boot() {}
 
 	public function init() {
-		// elgg_unregister_css() removed in Elgg 4.x — no longer needed
+		\elgg_require_js('elgg/lightbox');
 	}
 
 	public function ready() {}

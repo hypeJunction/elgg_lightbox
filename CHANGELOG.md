@@ -1,3 +1,17 @@
+<a name="3.0.0"></a>
+## 3.0.0 (2026-04-14)
+
+### Elgg 4.x migration
+
+* Migrated plugin to Elgg 4.x (via 3.x). Target PHP >= 7.4.
+* `manifest.xml` removed — `composer.json` is now the sole metadata source.
+* `composer.json` bumped to `composer/installers ^2.0` with `config.allow-plugins` block.
+* License SPDX id normalized to `GPL-2.0-or-later`.
+* `Bootstrap::init()` now calls `elgg_require_js('elgg/lightbox')` so the AMD module is actually loaded on pages.
+* Added PHPUnit integration test suite (3 tests, 18 assertions) and Playwright smoke.
+* Added per-plugin Docker test stack under `docker/` with in-network `ELGG_SITE_URL=http://elgg/` so Playwright and Elgg agree on origin.
+* `ARCHITECTURE.md` added.
+
 <a name="2.1.2"></a>
 ## [2.1.2](https://github.com/hypeJunction/elgg_lightbox/compare/2.1.1...v2.1.2) (2016-04-26)
 
