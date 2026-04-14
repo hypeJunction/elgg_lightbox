@@ -1,6 +1,11 @@
 <?php
 
 return [
+	'plugin' => [
+		'name' => 'Lightbox for Elgg',
+		'version' => '3.0.0',
+	],
+
 	'bootstrap' => \hypeJunction\Lightbox\Bootstrap::class,
 	'view_extensions' => [
 		'elgg.css' => [

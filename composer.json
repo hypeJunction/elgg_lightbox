@@ -1,12 +1,13 @@
 {
 	"name": "hypejunction/elgg_lightbox",
+	"version": "3.0.0",
 	"type": "elgg-plugin",
 	"description": "Enhanced lightbox for Elgg",
 	"homepage": "http://hypejunction.com",
 	"keywords": [
 		"elgg", "plugin", "ui", "lightbox"
 	],
-	"license": "GPL-2.0",
+	"license": "GPL-2.0-or-later",
 	"authors": [
 		{
 			"name": "Ismayil Khayredinov",
@@ -14,11 +15,22 @@
 		}
 	],
 	"require": {
-		"composer/installers": "~1.0"
+		"php": ">=7.4",
+		"composer/installers": "^2.0"
 	},
 	"autoload": {
 		"psr-4": {
-			"hypeJunction\\Lightbox\\": "classes/hypeJunction/Lightbox"
+			"hypeJunction\\Lightbox\\": "classes/hypeJunction/Lightbox/"
+		}
+	},
+	"extra": {
+		"elgg-plugin": {
+			"id": "elgg_lightbox"
+		}
+	},
+	"config": {
+		"allow-plugins": {
+			"composer/installers": true
 		}
 	}
 }
