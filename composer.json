@@ -5,7 +5,10 @@
 	"description": "Enhanced lightbox for Elgg",
 	"homepage": "http://hypejunction.com",
 	"keywords": [
-		"elgg", "plugin", "ui", "lightbox"
+		"elgg",
+		"plugin",
+		"ui",
+		"lightbox"
 	],
 	"license": "GPL-2.0-or-later",
 	"authors": [
@@ -16,7 +19,8 @@
 	],
 	"require": {
 		"php": ">=7.4",
-		"composer/installers": "^2.0"
+		"composer/installers": "^2.0",
+		"elgg/elgg": "^4.0"
 	},
 	"autoload": {
 		"psr-4": {
@@ -34,4 +38,3 @@
 		}
 	}
 }
-
