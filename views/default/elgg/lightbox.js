@@ -10,7 +10,7 @@ define('elgg/lightbox', function (require) {
 	var elgg = require('elgg');
 	var $ = require('jquery');
 	var hooks = require('elgg/hooks');
-	require('elgg/init');
+	var i18n = require('elgg/i18n');
 	require('jquery.colorbox');
 
 	var lightbox = {
@@ -27,25 +27,19 @@ define('elgg/lightbox', function (require) {
 
 			// Note: keep these in sync with /views/default/lightbox.js.php
 			var settings = {
-				current: elgg.echo('js:lightbox:current', ['{current}', '{total}']),
+				current: i18n.echo('js:lightbox:current', ['{current}', '{total}']),
 				previous: '<span class="fa fa-caret-left"></span>',
 				next: '<span class="fa fa-caret-right"></span>',
 				close: '<span class="fa fa-times"></span>',
-				xhrError: elgg.echo('error:default'),
-				imgError: elgg.echo('error:default'),
+				xhrError: i18n.echo('error:default'),
+				imgError: i18n.echo('error:default'),
 				opacity: 0.5,
 				maxWidth: '100%',
 				// don't move colorbox on small viewports https://github.com/Elgg/Elgg/issues/5312
 				reposition: $(window).height() > 600
 			};
 
-			elgg.provide('elgg.ui.lightbox');
-
-			if ($.isPlainObject(elgg.ui.lightbox.deprecated_settings)) {
-				$.extend(settings, elgg.ui.lightbox.deprecated_settings, opts);
-			} else {
-				$.extend(settings, opts);
-			}
+			$.extend(settings, opts);
 			
 			return hooks.trigger('getOptions', 'ui.lightbox', null, settings);
 		},

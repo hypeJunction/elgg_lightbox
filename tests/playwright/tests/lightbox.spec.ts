@@ -1,4 +1,19 @@
-import { test, expect } from '@playwright/test';
+import { test, expect, type Page } from '@playwright/test';
+
+// Wait until elgg/lightbox AMD module has executed. Checks the RequireJS internal
+// context registry, which works regardless of RequireJS version.
+async function waitForLightboxReady(page: Page) {
+	await page.waitForFunction(() => {
+		const r = (window as any).require;
+		if (!r) return false;
+		// RequireJS stores executed modules in require.s.contexts._.defined
+		const defined = r?.s?.contexts?.['_']?.defined;
+		if (defined && defined['elgg/lightbox']) return true;
+		// Fallback: require.defined() API (RequireJS >= 2.1.3)
+		if (typeof r.defined === 'function') return r.defined('elgg/lightbox');
+		return false;
+	}, { timeout: 15000 });
+}
 
 test.describe('elgg_lightbox plugin', () => {
 
@@ -46,8 +61,8 @@ test.describe('elgg_lightbox plugin', () => {
 			document.body.appendChild(link);
 		});
 
-		// Wait for the elgg/lightbox module to bind event handlers
-		await page.waitForTimeout(1000);
+		// Wait until the AMD module has bound click.lightbox on document
+		await waitForLightboxReady(page);
 
 		await page.click('#test-lightbox-trigger');
 
@@ -76,7 +91,8 @@ test.describe('elgg_lightbox plugin', () => {
 			document.body.appendChild(link);
 		});
 
-		await page.waitForTimeout(1000);
+		// Wait until the AMD module has bound click.lightbox on document
+		await waitForLightboxReady(page);
 
 		await page.click('#test-close-trigger');
 
