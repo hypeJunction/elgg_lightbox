@@ -9,6 +9,7 @@ define('elgg/lightbox', function (require) {
 
 	var elgg = require('elgg');
 	var $ = require('jquery');
+	var hooks = require('elgg/hooks');
 	require('elgg/init');
 	require('jquery.colorbox');
 
@@ -46,7 +47,7 @@ define('elgg/lightbox', function (require) {
 				$.extend(settings, opts);
 			}
 			
-			return elgg.trigger_hook('getOptions', 'ui.lightbox', null, settings);
+			return hooks.trigger('getOptions', 'ui.lightbox', null, settings);
 		},
 		/**
 		 * Bind colorbox lightbox click to HTML
