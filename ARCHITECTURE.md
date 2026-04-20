@@ -1,4 +1,4 @@
-# elgg_lightbox — Architecture (Elgg 4.x)
+# elgg_lightbox — Architecture (Elgg 5.x)
 
 ## Summary
 
@@ -8,7 +8,7 @@ to `.elgg-lightbox`, `.elgg-lightbox-photo`, `.elgg-lightbox-inline`, and
 `.elgg-lightbox-iframe` links. No persistent storage, no custom entities,
 no database tables.
 
-Target version: **Elgg 4.x** (PHP 7.4+).
+Target version: **Elgg 5.x** (PHP 8.1+).
 
 ## Directory layout
 
@@ -67,6 +67,18 @@ No hooks or events registered.
   Playwright (running in the `node` service on the same Docker network)
   fetches assets from a same-origin URL and the `document.styleSheets`
   cross-origin check passes.
+
+## Migration notes — 4.x → 5.x
+
+- `composer.json` bumped to `elgg/elgg ^5.0` and `php >=8.1`.
+- Docker infra updated: PHP 8.1-apache, Elgg ~5.1.0, MySQL 8.0.
+- `lightbox.js`: replaced `elgg.trigger_hook('getOptions', 'ui.lightbox', null, settings)`
+  with `hooks.trigger('getOptions', 'ui.lightbox', null, settings)` using the `elgg/hooks`
+  AMD module — `elgg.trigger_hook` global was removed in Elgg 5.x.
+- No `'hooks'` key in `elgg-plugin.php` — no key rename needed.
+- No private settings, breadcrumbs, or removed-function calls — only the JS hook change
+  was required beyond the version bump.
+- PHPUnit constraint: kept at `^9.6` (Elgg 5.1.x ships PHPUnit 9 in its test base).
 
 ## Known issues / follow-ups
 

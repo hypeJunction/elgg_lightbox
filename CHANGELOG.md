@@ -1,3 +1,15 @@
+<a name="3.1.0"></a>
+## 3.1.0 (2026-04-20)
+
+### Elgg 5.x migration
+
+* Migrated plugin to Elgg 5.x. Target PHP >= 8.1.
+* `composer.json` bumped to `elgg/elgg ^5.0` and `php >=8.1`.
+* Docker infra updated: PHP 8.1-apache, Elgg ~5.1.0, MySQL 8.0.
+* `lightbox.js`: replaced deprecated `elgg.trigger_hook()` with `hooks.trigger()` from the `elgg/hooks` AMD module (global `elgg.trigger_hook` removed in Elgg 5.x).
+* No hooks/events registered — `elgg-plugin.php` required no key renames.
+* All 3 PHPUnit integration tests pass on Elgg 5.x.
+
 <a name="3.0.0"></a>
 ## 3.0.0 (2026-04-14)
 
