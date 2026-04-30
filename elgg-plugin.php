@@ -3,7 +3,7 @@
 return [
 	'plugin' => [
 		'name' => 'Lightbox for Elgg',
-		'version' => '3.0.0',
+		'version' => '3.1.0',
 	],
 
 	'bootstrap' => \hypeJunction\Lightbox\Bootstrap::class,
