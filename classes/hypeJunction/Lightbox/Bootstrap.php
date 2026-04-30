@@ -4,23 +4,57 @@ namespace hypeJunction\Lightbox;
 
 use Elgg\PluginBootstrap;
 
+/**
+ * Plugin bootstrap for elgg_lightbox.
+ */
 class Bootstrap extends PluginBootstrap {
 
-	public function load() {}
+	/**
+	 * {@inheritdoc}
+	 */
+	public function load() {
+	}
 
-	public function boot() {}
+	/**
+	 * {@inheritdoc}
+	 */
+	public function boot() {
+	}
 
+	/**
+	 * {@inheritdoc}
+	 */
 	public function init() {
 		\elgg_require_js('elgg/lightbox');
 	}
 
-	public function ready() {}
+	/**
+	 * {@inheritdoc}
+	 */
+	public function ready() {
+	}
 
-	public function shutdown() {}
+	/**
+	 * {@inheritdoc}
+	 */
+	public function shutdown() {
+	}
 
-	public function activate() {}
+	/**
+	 * {@inheritdoc}
+	 */
+	public function activate() {
+	}
 
-	public function deactivate() {}
+	/**
+	 * {@inheritdoc}
+	 */
+	public function deactivate() {
+	}
 
-	public function upgrade() {}
+	/**
+	 * {@inheritdoc}
+	 */
+	public function upgrade() {
+	}
 }
