@@ -1,3 +1,14 @@
+## [4.0.0] — Elgg 6.x migration (2026-05-09)
+
+- Migrated to Elgg 6.x (5.x → 6.x). Requires PHP 8.1+.
+- Bumped `elgg/elgg` constraint to `^6.0`.
+- AMD JS removed: `views/default/elgg/lightbox.js` (AMD named module) converted to ES module at `views/default/js/elgg/lightbox.js`.
+- `hooks.trigger()` from AMD `elgg/hooks` → `trigger()` imported from `elgg/hooks`.
+- `elgg_require_js('elgg/lightbox')` → `elgg_import_esm('elgg/lightbox')` in Bootstrap.
+- Docker stack upgraded to Elgg 6.x, PHPUnit ~10.5.
+
+---
+
 <a name="3.1.0"></a>
 ## 3.1.0 (2026-04-20)
 

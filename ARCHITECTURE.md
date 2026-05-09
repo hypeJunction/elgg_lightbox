@@ -1,4 +1,4 @@
-# elgg_lightbox — Architecture (Elgg 5.x)
+# elgg_lightbox — Architecture (Elgg 6.x)
 
 ## Summary
 

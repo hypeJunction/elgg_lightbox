@@ -25,7 +25,7 @@ class Bootstrap extends PluginBootstrap {
 	 * {@inheritdoc}
 	 */
 	public function init() {
-		\elgg_require_js('elgg/lightbox');
+		\elgg_import_esm('elgg/lightbox');
 	}
 
 	/**
