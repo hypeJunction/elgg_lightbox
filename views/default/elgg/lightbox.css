@@ -1,51 +1,204 @@
+:root {
+	--cbox-overlay-color: #fff;
+	--cbox-border-color: rgba(204, 204, 204, 0.5);
+	--cbox-border-radius: 5px;
+	--cbox-border-width: 10px;
+	--cbox-control-size: 22px;
+	--cbox-control-bg: #000;
+	--cbox-control-border: #fff;
+	--cbox-control-color: #fff;
+}
+
 /*
 Colorbox Core Style:
 The following CSS is consistent between example themes and should not be altered.
 */
-#colorbox, #cboxOverlay, #cboxWrapper { position: absolute; top: 0; left: 0; z-index: 1100; overflow: hidden; }
+#colorbox,
+#cboxOverlay,
+#cboxWrapper {
+	position: absolute;
+	top: 0;
+	left: 0;
+	z-index: 1100;
+	overflow: hidden;
+}
 
-#cboxWrapper { max-width: none; }
+#cboxWrapper {
+	max-width: none;
+}
 
-#cboxOverlay { position: fixed; width: 100%; height: 100%; background: white; }
+#cboxOverlay {
+	position: fixed;
+	width: 100%;
+	height: 100%;
+	background: var(--cbox-overlay-color);
+}
 
-#cboxMiddleLeft, #cboxBottomLeft { clear: left; }
+#cboxMiddleLeft,
+#cboxBottomLeft {
+	clear: left;
+}
 
-#cboxContent { position: relative; background: transparent; margin: 35px; border: 10px rgba(204, 204, 204, 0.5) solid; background: #fff; -webkit-border-radius: 5px; -moz-border-radius: 5px; -ms-border-radius: 5px; -o-border-radius: 5px; border-radius: 5px; }
+#cboxContent {
+	position: relative;
+	background: transparent;
+	margin: calc(25px + var(--cbox-border-width));
+	border: var(--cbox-border-width) var(--cbox-border-color) solid;
+	background: #fff;
+	border-radius: var(--cbox-border-radius);
+}
 
-#cboxLoadedContent { overflow: auto; -webkit-overflow-scrolling: touch; }
-#cboxLoadedContent > * { padding: 15px; -webkit-box-sizing: border-box; -moz-box-sizing: border-box; box-sizing: border-box; }
+#cboxLoadedContent {
+	overflow: auto;
+	-webkit-overflow-scrolling: touch;
+}
 
-#cboxTitle { position: absolute; bottom: -35px; max-width: 80%; font-weight: bold; }
+#cboxLoadedContent > * {
+	padding: 15px;
+	box-sizing: border-box;
+}
 
-#cboxLoadingOverlay, #cboxLoadingGraphic { position: absolute; top: 0; left: 0; width: 100%; height: 100%; }
+#cboxTitle {
+	position: absolute;
+	bottom: -35px;
+	max-width: 80%;
+	font-weight: bold;
+}
 
-#cboxPrevious, #cboxNext, #cboxClose, #cboxSlideshow { cursor: pointer; }
+#cboxLoadingOverlay,
+#cboxLoadingGraphic {
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+}
 
-.cboxPhoto { float: left; border: 0; display: block; max-width: none; -ms-interpolation-mode: bicubic; margin: auto; }
+#cboxPrevious,
+#cboxNext,
+#cboxClose,
+#cboxSlideshow {
+	cursor: pointer;
+}
 
-.cboxIframe { width: 100%; height: 100%; display: block; border: 0; background: #fff; }
+.cboxPhoto {
+	float: left;
+	border: 0;
+	display: block;
+	max-width: none;
+	margin: auto;
+}
 
-#colorbox, #cboxContent, #cboxLoadedContent { -webkit-box-sizing: content-box; -moz-box-sizing: content-box; box-sizing: content-box; }
+.cboxIframe {
+	width: 100%;
+	height: 100%;
+	display: block;
+	border: 0;
+	background: #fff;
+}
 
-#cboxTopLeft, #cboxTopCenter, #cboxTopRight, #cboxBottomLeft, #cboxBottomCenter, #cboxBottomRight, #cboxMiddleLeft, #cboxMiddleRight { display: none; }
+#colorbox,
+#cboxContent,
+#cboxLoadedContent {
+	box-sizing: content-box;
+}
 
-#cboxError { border: 1px solid rgba(204, 204, 204, 0.5); padding: 50px; }
+#cboxTopLeft,
+#cboxTopCenter,
+#cboxTopRight,
+#cboxBottomLeft,
+#cboxBottomCenter,
+#cboxBottomRight,
+#cboxMiddleLeft,
+#cboxMiddleRight {
+	display: none;
+}
 
-#cboxCurrent { position: absolute; right: 0; bottom: -35px; }
+#cboxError {
+	border: 1px solid var(--cbox-border-color);
+	padding: 50px;
+}
 
-#cboxLoadingOverlay { background: transparent url(ajax_loader_bw.gif) no-repeat center center; }
+#cboxCurrent {
+	position: absolute;
+	right: 0;
+	bottom: -35px;
+}
 
-#cboxPrevious, #cboxNext, #cboxSlideshow, #cboxClose { border: 0; overflow: visible; width: auto; background: none; margin: 0; padding: 0; }
+#cboxLoadingOverlay {
+	background: transparent url(ajax_loader_bw.gif) no-repeat center center;
+}
 
-#cboxSlideshow { position: absolute; bottom: 0; right: 42px; color: #444; }
+#cboxPrevious,
+#cboxNext,
+#cboxSlideshow,
+#cboxClose {
+	border: 0;
+	overflow: visible;
+	width: auto;
+	background: none;
+	margin: 0;
+	padding: 0;
+}
 
-#cboxClose, #cboxPrevious, #cboxNext { position: absolute; width: 22px; height: 22px; font-size: 14px; line-height: 14px; top: 50%; -webkit-border-radius: 1000px; -moz-border-radius: 1000px; -ms-border-radius: 1000px; -o-border-radius: 1000px; border-radius: 1000px; background: black; color: white; text-align: center; box-shadow: 0 0 0 2px white; }
+#cboxSlideshow {
+	position: absolute;
+	bottom: 0;
+	right: 42px;
+	color: #444;
+}
 
-#cboxPrevious { left: 0; margin-left: -15px; top: 50%; margin-top: -13px; }
+#cboxClose,
+#cboxPrevious,
+#cboxNext {
+	position: absolute;
+	width: var(--cbox-control-size);
+	height: var(--cbox-control-size);
+	font-size: calc(var(--cbox-control-size) - 8px);
+	line-height: calc(var(--cbox-control-size) - 8px);
+	top: 50%;
+	border-radius: 1000px;
+	background: var(--cbox-control-bg);
+	color: var(--cbox-control-color);
+	text-align: center;
+	box-shadow: 0 0 0 2px var(--cbox-control-border);
+}
 
-#cboxNext { right: 0; margin-right: -15px; top: 50%; margin-top: -13px; }
+#cboxPrevious {
+	left: 0;
+	margin-left: -15px;
+	top: 50%;
+	margin-top: calc(var(--cbox-control-size) / -2 - 2px);
+}
 
-#cboxClose { top: 0; right: 0; margin: -15px; }
+#cboxNext {
+	right: 0;
+	margin-right: -15px;
+	top: 50%;
+	margin-top: calc(var(--cbox-control-size) / -2 - 2px);
+}
 
+#cboxClose {
+	top: 0;
+	right: 0;
+	margin: -15px;
+}
 
-#colorbox, #cboxPrevious:active, #cboxNext:active, #cboxSlideshow:active, #cboxClose:active { outline: 0; }
+.cboxIE #cboxTopLeft,
+.cboxIE #cboxTopCenter,
+.cboxIE #cboxTopRight,
+.cboxIE #cboxBottomLeft,
+.cboxIE #cboxBottomCenter,
+.cboxIE #cboxBottomRight,
+.cboxIE #cboxMiddleLeft,
+.cboxIE #cboxMiddleRight {
+	filter: progid:DXImageTransform.Microsoft.gradient(startColorstr=#00FFFFFF,endColorstr=#00FFFFFF);
+}
+
+#colorbox,
+#cboxPrevious:active,
+#cboxNext:active,
+#cboxSlideshow:active,
+#cboxClose:active {
+	outline: 0;
+}
