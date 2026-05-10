@@ -1,6 +1,6 @@
 Lightbox for Elgg
 ================
-![Elgg 5.x](https://img.shields.io/badge/Elgg-5.x-orange.svg?style=flat-square)
+![Elgg 7.x](https://img.shields.io/badge/Elgg-7.x-orange.svg?style=flat-square)
 
 Lightbox component for Elgg
 
@@ -51,3 +51,9 @@ require(['elgg/lightbox'], function() {
 ## Notes
 
 * This drop `elgg.ui.lightbox` namespace. Use AMD module instead.
+
+## Compatibility
+
+| Plugin version | Elgg version |
+|---|---|
+| current | 7.x |
