@@ -1,6 +1,5 @@
 {
     "name": "hypejunction/elgg_lightbox",
-    "version": "7.0.0",
     "type": "elgg-plugin",
     "description": "Enhanced lightbox for Elgg",
     "homepage": "https://github.com/hypeJunction/elgg_lightbox",
