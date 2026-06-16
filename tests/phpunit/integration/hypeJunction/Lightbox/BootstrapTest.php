@@ -34,8 +34,8 @@ class BootstrapTest extends IntegrationTestCase {
 		$this->assertTrue(elgg_view_exists('elgg/lightbox.css'), 'View elgg/lightbox.css should exist');
 	}
 
-	public function testLightboxJsViewExists(): void {
-		$this->assertTrue(elgg_view_exists('elgg/lightbox.js'), 'View elgg/lightbox.js should exist');
+	public function testLightboxEsmViewExists(): void {
+		$this->assertTrue(elgg_view_exists('elgg/lightbox.mjs'), 'View elgg/lightbox.mjs should exist');
 	}
 
 	public function testColorboxCssViewAliasExists(): void {
