@@ -6,9 +6,15 @@
  */
 import * as elgg from 'elgg';
 import $ from 'jquery';
-import { trigger } from 'elgg/hooks';
-import { echo } from 'elgg/i18n';
+import hooks from 'elgg/hooks';
+import i18n from 'elgg/i18n';
 import 'jquery.colorbox';
+
+// elgg/hooks and elgg/i18n are default exports (their helpers are methods on the
+// object), not named exports — Elgg 7 ES modules. Wrap the methods this module
+// uses so the existing trigger()/echo() call sites keep working.
+const trigger = (...args) => hooks.trigger(...args);
+const echo = (...args) => i18n.echo(...args);
 
 const lightbox = {
 	/**
