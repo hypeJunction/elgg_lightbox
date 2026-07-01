@@ -1,3 +1,18 @@
+## Unreleased — Elgg 7.x ESM fix
+
+- Fixed the client lightbox module so it actually loads on Elgg 7. The 6.x
+  migration left the AMD module `views/default/elgg/lightbox.js` in place (still
+  using removed global jQuery) and placed the ES module at
+  `views/default/js/elgg/lightbox.js` — a `.js` file is never registered in the
+  importmap, and the `js/elgg/lightbox` view path did not match the
+  `elgg_import_esm('elgg/lightbox')` call in `Bootstrap`.
+- Removed the stale AMD module `views/default/elgg/lightbox.js`.
+- Moved the ES module to `views/default/elgg/lightbox.mjs` so it resolves from
+  `elgg_import_esm('elgg/lightbox')`.
+- Updated `BootstrapTest` to assert `elgg/lightbox.mjs` exists.
+
+---
+
 ## [4.0.0] — Elgg 6.x migration (2026-05-09)
 
 - Migrated to Elgg 6.x (5.x → 6.x). Requires PHP 8.1+.
